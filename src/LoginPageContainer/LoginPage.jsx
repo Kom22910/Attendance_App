@@ -98,7 +98,7 @@ const LoginPage = () => {
             <div className="container-fluid LoginPageContainer">
                 <div className="row">
 
-                    <div className="col-md-4 col-sm-8 col-10 py-4 bg-info m-auto formContainer">
+                    <div className="col-md-4 col-sm-8 col-10 py-4 m-auto bg-info formContainer">
 
                         <h3 className='text-center'>Login Page</h3>
 

@@ -66,7 +66,7 @@ const EditPage = () => {
       <div className="col-12 LoginPageContainer">
         <div className="row">
 
-          <div className="col-md-4 py-4 m-auto formContainer">
+          <div className="col-md-4 col-12 py-4 bg-info m-auto formContainer">
 
             <h3 className='text-center'>Edit Member</h3>
 

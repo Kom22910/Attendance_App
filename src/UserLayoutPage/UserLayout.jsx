@@ -55,7 +55,7 @@ const UserLayout = () => {
       <div className="container-fluid UserContainer">
         <div className="row">
 
-          <div className="m-auto userProfileCard py-3">
+          <div className="m-auto userProfileCard py-4">
             <div className="row">
 
               {/* Profile Photo */}
