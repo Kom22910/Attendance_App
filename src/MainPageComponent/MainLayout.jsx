@@ -46,7 +46,6 @@ const MainLayout = () => {
 
         let result = await axios.get(`${Base_url}/user/api/`);
         setTotalData(result.data.data)
-        console.log(result.data.data);
     }
 
 
@@ -64,25 +63,25 @@ const MainLayout = () => {
                 <div className="row">
 
                     {/* Header */}
-                    <div className="col-10 m-auto headerContainer">
+                    <div className="col-md-10 col-11 m-auto headerContainer">
                         <div className="row">
 
-                            <div className="col-12 ms-auto py-2 profileContainer">
+                            <div className="col-12 py-2 profileContainer">
 
                                 <div className="row">
                                     
                                     {/* part 2 */}
-                                    <div className="col-8  m-auto">
+                                    <div className="col-md-8 col-4  m-auto">
                                         <h3 className='text-center m-auto'>{date1}</h3>
                                     </div>
 
 
                                     {/* part 2 */}
-                                    <div className="col-3  ms-auto py-2">
+                                    <div className="col-md-3 col-6  ms-auto py-2">
                                         <div className="row">
 
-                                            <div className="col-6 flexKaro">
-                                                <h3 className='text-primary'>{AdminData.name}</h3>
+                                            <div className="col-md-6 col-7 flexKaro">
+                                                <h3 className='text-primary m-auto'>{AdminData.name}</h3>
                                             </div>
 
                                             <div className="col-5">
@@ -104,7 +103,7 @@ const MainLayout = () => {
                         <div className="row">
 
                             {/* section 1 - nav options  */}
-                            <div className="col-6 m-auto py-2 headerOption">
+                            <div className="col-md-6 col-12 m-auto py-2 headerOption">
                                 <ul>
                                     <li className='btn' onClick={() => setVisibleContent(1)}>Total Member</li>
                                     <li className='btn' onClick={() => setVisibleContent(2)}>Active Member</li>

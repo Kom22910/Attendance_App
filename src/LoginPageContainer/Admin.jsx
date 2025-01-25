@@ -27,23 +27,6 @@ const Admin = () => {
     const SubmitData = (e) => {
         e.preventDefault();
 
-        // let match = adminData.filter((item) => {
-        //     return item.code === Fdata.code && item.password === Fdata.password
-        // });
-
-
-        // if (!match[0]) {
-        //     alert("Login Failed try later");
-        //     nav('/');
-        // }
-        // else {
-        //     if (match[0].password === Fdata.password && match[0].code === Fdata.code){
-
-        //         alert('Login Successfully !!!');
-        //         nav('/admin/AXRYVSCDFV');
-        //     }
-        // }
-
         const Verify = async () => {
            try{
                await axios.post(`${Base_url}/admin/getadmin`, Fdata)
@@ -53,6 +36,7 @@ const Admin = () => {
                 })
                 .catch((err)=>{
                     alert(err.response.data.Error);
+                    nav("/");
                 })
            }
            catch(err){
@@ -66,52 +50,42 @@ const Admin = () => {
     }
 
 
-    // const FetchData = async () => {
-    //     let res = await axios.get('http://localhost:8080/admin/getadmin');
-    //     setAdminData(res.data.data)
-    // }
-
-    // useEffect(() => {
-    //     FetchData()
-    // }, [])
-
-
     return (
         <StrictMode>
 
             <div className="container-fluid AdminContainer">
                 <div className="row">
 
-                    <div className="col-4 py-4 bg-info m-auto formContainer">
+                    <div className="col-md-4 col-sm-7 col-10 py-4 bg-info m-auto formContainer">
 
                         <h3 className='text-center'>Admin Login</h3>
 
                         <div className="row">
-                            <form className='mt-5' onSubmit={(e) => SubmitData(e)}>
+                            <form className='mt-md-5 mt-4' onSubmit={(e) => SubmitData(e)}>
 
-                                <div className="form-group col-10 m-auto my-2">
+                                <div className="form-group col-10 m-auto my-md-2 my-3">
                                     <div className="row">
 
-                                        <div className="col-4 m-auto">
+                                        <div className="col-sm-4 col-5 m-auto">
                                             <label>User code : </label>
                                         </div>
 
-                                        <div className="col-8">
+                                        <div className="col-sm-8 col-7">
                                             <input type="text" placeholder='Enter code' required={true} name='code' value={Fdata.code} onChange={(e) => HandleFormData(e)} className='form-control' />
                                         </div>
 
                                     </div>
                                 </div>
 
-                                <div className="form-group col-10 m-auto my-2">
+                                <div className="form-group col-10 m-auto my-md-2 my-3">
                                     <div className="row">
 
-                                        <div className="col-4 m-auto">
+                                        <div className="col-sm-4 col-5 m-auto">
                                             <label>Password : </label>
                                         </div>
 
-                                        <div className="col-8">
-                                            <input type="password" placeholder='Enter correct password' required={true} name='password' value={Fdata.password} onChange={(e) => HandleFormData(e)} className='form-control' />
+                                        <div className="col-sm-8 col-7">
+                                            <input type="password" placeholder='Enter password' required={true} name='password' value={Fdata.password} onChange={(e) => HandleFormData(e)} className='form-control' />
                                         </div>
 
                                     </div>

@@ -78,11 +78,11 @@ const UserLayout = () => {
                       <div className="col-11 m-auto detail">
                         <div className="row">
 
-                          <div className="col-4">
+                          <div className="col-md-4 col-6 start">
                             <p>Appointed : </p>
                           </div>
 
-                          <div className="col-4">
+                          <div className="col-md-4 col-6">
                             <p>{user.BName}</p>
                           </div>
                         </div>
@@ -91,11 +91,11 @@ const UserLayout = () => {
                       <div className="col-11 m-auto detail">
                         <div className="row">
 
-                          <div className="col-4">
+                          <div className="col-md-4 col-6 start">
                             <p>Login Time : </p>
                           </div>
 
-                          <div className="col-4">
+                          <div className="col-md-4 col-6">
                             <p>{user.login}</p>
                           </div>
                         </div>
@@ -104,11 +104,11 @@ const UserLayout = () => {
                       <div className="col-11 m-auto detail">
                         <div className="row">
 
-                          <div className="col-4">
+                          <div className="col-md-4 col-6 start">
                             <p>Logout Time : </p>
                           </div>
 
-                          <div className="col-4">
+                          <div className="col-md-4 col-6">
                             <p>{user.logout}</p>
                           </div>
                         </div>
@@ -117,11 +117,11 @@ const UserLayout = () => {
                       <div className="col-11 m-auto detail">
                         <div className="row">
 
-                          <div className="col-4">
+                          <div className="col-md-4 col-6 start">
                             <p>Appointer : </p>
                           </div>
 
-                          <div className="col-4">
+                          <div className="col-md-4 col-6">
                             <p>{user.leader}</p>
                           </div>
                         </div>

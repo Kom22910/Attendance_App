@@ -98,36 +98,36 @@ const LoginPage = () => {
             <div className="container-fluid LoginPageContainer">
                 <div className="row">
 
-                    <div className="col-4 py-4 bg-info m-auto formContainer">
+                    <div className="col-md-4 col-sm-8 col-10 py-4 bg-info m-auto formContainer">
 
                         <h3 className='text-center'>Login Page</h3>
 
                         <div className="row">
-                            <form onSubmit={(e) => Submitting(e)} className='mt-5'>
+                            <form onSubmit={(e) => Submitting(e)} className='mt-md-5 mt-3'>
 
-                                <div className="form-group col-10 m-auto my-2">
+                                <div className="form-group col-10 m-auto my-md-2 my-3">
                                     <div className="row">
 
-                                        <div className="col-4 m-auto">
+                                        <div className="col-sm-4 col-5 m-auto">
                                             <label>User code : </label>
                                         </div>
 
-                                        <div className="col-8">
+                                        <div className="col-sm-8 col-7">
                                             <input type="code" placeholder='Enter code' name='code' value={Fdata.code} onChange={(e) => HandleChange(e)} className='form-control' />
                                         </div>
 
                                     </div>
                                 </div>
 
-                                <div className="form-group col-10 m-auto my-2">
+                                <div className="form-group col-10 m-auto my-md-2 my-3">
                                     <div className="row">
 
-                                        <div className="col-4 m-auto">
+                                        <div className="col-sm-4 col-5 m-auto">
                                             <label>Password : </label>
                                         </div>
 
-                                        <div className="col-8">
-                                            <input type="password" placeholder='Enter correct password' name='password' value={Fdata.password} onChange={(e) => HandleChange(e)} className='form-control' />
+                                        <div className="col-sm-8 col-7">
+                                            <input type="password" placeholder='Enter password' name='password' value={Fdata.password} onChange={(e) => HandleChange(e)} className='form-control' />
                                         </div>
 
                                     </div>
@@ -158,7 +158,7 @@ const LoginPage = () => {
                                     <p className='text-center fw-bold'>This is for Admin only !!!</p>
                                 </div>
 
-                                <div className='col-6 m-auto text-center'>
+                                <div className='col-cd-6 col-11 m-auto text-center'>
                                     <button className='btn btn-danger px-4' onClick={() => nav('/admin/user')}> Go To Admin Login</button>
                                 </div>
 
