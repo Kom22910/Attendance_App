@@ -1,0 +1,159 @@
+
+
+
+import axios from 'axios';
+import React, { StrictMode, useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
+import { useAuth } from '../StoreToken/auth';
+
+const Base_url = import.meta.env.VITE_BASE_URL;
+
+const UserLayout = () => {
+
+  const ID = useParams();
+  const nav = useNavigate();
+
+
+  const [user, setUser] = useState({});
+  const {LogoutUser} = useAuth();
+
+  // console.log(user);
+
+  const FetchId = async () => {
+    let res = await axios.get(`${Base_url}/user/api/${ID.id}`);
+    setUser(res.data.data);
+  }
+
+  const DeleteFile = async () => {
+    if (confirm('Are you sure ?')) {
+      let time = new Date().toLocaleTimeString();
+
+      await axios.patch(`${Base_url}/user/api/edit/${ID.id}`, {
+        logout: time,
+        status: "Deactive"
+      })
+        .then(() => {
+          alert("Successfully Logout");
+          LogoutUser()
+          nav('/');
+        })
+    }
+    else {
+      alert("Cancelled !!");
+    }
+  }
+
+  useEffect(() => {
+    FetchId();
+  }, []);
+
+
+
+  return (
+    <StrictMode>
+
+      <div className="container-fluid UserContainer">
+        <div className="row">
+
+          <div className="m-auto userProfileCard py-3">
+            <div className="row">
+
+              {/* Profile Photo */}
+              <div className="col-6 m-auto imageContainer mt-4">
+                <img src='/AppLogo.jpg' alt="abc" />
+              </div>
+
+              {/* name */}
+              <div className="col-10 m-auto my-4">
+                <h4 className='text-center'>{user.name}</h4>
+              </div>
+
+              {/* detail about member */}
+              <div className="col-11 m-auto userDetail">
+                <div className="row">
+
+                  <div className="col-12">
+                    <div className="row">
+
+                      <div className="col-11 m-auto detail">
+                        <div className="row">
+
+                          <div className="col-4">
+                            <p>Appointed : </p>
+                          </div>
+
+                          <div className="col-4">
+                            <p>{user.BName}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-11 m-auto detail">
+                        <div className="row">
+
+                          <div className="col-4">
+                            <p>Login Time : </p>
+                          </div>
+
+                          <div className="col-4">
+                            <p>{user.login}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-11 m-auto detail">
+                        <div className="row">
+
+                          <div className="col-4">
+                            <p>Logout Time : </p>
+                          </div>
+
+                          <div className="col-4">
+                            <p>{user.logout}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-11 m-auto detail">
+                        <div className="row">
+
+                          <div className="col-4">
+                            <p>Appointer : </p>
+                          </div>
+
+                          <div className="col-4">
+                            <p>{user.leader}</p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+
+
+              {/* Logout button */}
+              <div className="col-8 m-auto text-center mt-4">
+
+                <button className='btn btn-danger' onClick={() => DeleteFile()}>
+                  Logout
+                </button>
+
+              </div>
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </StrictMode>
+  )
+}
+
+export default UserLayout;

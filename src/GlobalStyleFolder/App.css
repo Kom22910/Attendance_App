@@ -1,0 +1,179 @@
+
+
+
+
+
+.AdminContainer{
+    background-color: #F5F5F7;
+    height: 100vh;
+    overflow: hidden;
+
+    .formContainer{
+        margin-top: 10% !important;
+        height: 50vh;
+        border-radius: 15px;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.205);
+
+
+        form{
+            .form-group{
+                label{
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+.LoginPageContainer{
+    position: absolute;
+    z-index: 100;
+    background-color: #F5F5F7;
+    height: 100vh;
+    overflow: hidden;
+
+    .formContainer{
+        margin-top: 5% !important;
+     
+        border-radius: 15px;
+        box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.205);
+
+        form{
+            .form-group{
+                label{
+                    font-size: 16px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+
+
+/* Admin page */
+.MainPageContainer {
+    background-color: #F5F5F7;
+    height: 100vh;
+    overflow-y: scroll;
+
+
+    .headerContainer {
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.093);
+        .profileContainer {
+
+            .flexKaro {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+
+    .bodySectionContainer {
+
+        /* section 1 */
+        .headerOption {
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                li {
+                    background-color: White;
+                    color: black;
+                    padding: 8px 18px;
+                    margin: 0px 10px;
+                    font-size: 16px;
+                    font-weight: 500;
+                    border-radius: 50px;
+                    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.149);
+                    cursor: pointer;
+                }
+
+                li:hover {
+                    background-color: black;
+                    color: white;
+                    font-weight: 600;
+                }
+
+                .green:hover{
+                    background-color: #44CD4E;
+                }
+            }
+
+        }
+
+        /* section 2 - bodysecction  */
+        .sec2 {
+            table {
+                overflow: hidden;
+                border-radius: 3px !important;
+                box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.212);
+
+
+                tbody , thead{
+                    tr{
+                        td , th{
+                            text-align: center;
+                            padding: 18px 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* user page */
+.UserContainer{
+    background-color: #F5F5F7;
+    height: 100vh;
+    overflow: hidden;
+
+
+    .userProfileCard{
+        width: 30%;
+        margin-top: 6% !important;
+        height: 72vh;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.151);
+
+
+
+        .imageContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img{
+                width: 60%;
+                border-radius: 50%;
+                /* border: 1px solid black; */
+            }
+        }
+
+        .userDetail{
+            .detail{
+                .row{
+                    justify-content: center;
+                    p{
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}
