@@ -56,7 +56,7 @@ const SignUp = () => {
       <div className="container-fluid LoginPageContainer">
         <div className="row">
 
-          <div className="col-4 py-4 bg-info m-auto formContainer">
+          <div className="col-md-4 col-11 py-4 bg-info m-auto formContainer">
 
             <h3 className='text-center'>Add Member</h3>
 
@@ -69,11 +69,11 @@ const SignUp = () => {
                 <div className="form-group col-10 m-auto my-3">
                   <div className="row">
 
-                    <div className="col-4 m-auto">
+                    <div className="col-md-4 col-5 m-auto">
                       <label>User Name : </label>
                     </div>
 
-                    <div className="col-8">
+                    <div className="col-md-8 col-7">
                       <input type="text" placeholder='Enter name ' required={true} name="name" value={data.name} className='form-control' onChange={(e) => ChangeData(e)} />
                     </div>
 
@@ -83,11 +83,11 @@ const SignUp = () => {
                 <div className="form-group col-10 m-auto my-3">
                   <div className="row">
 
-                    <div className="col-4 m-auto">
+                    <div className="col-md-4 col-5 m-auto">
                       <label>User code : </label>
                     </div>
 
-                    <div className="col-8">
+                    <div className="col-md-8 col-7">
                       <input type="text" placeholder='Enter code ' required={true} name='code' value={data.code} onChange={(e) => ChangeData(e)} className='form-control' />
                     </div>
 
@@ -97,11 +97,11 @@ const SignUp = () => {
                 <div className="form-group col-10 m-auto my-3">
                   <div className="row">
 
-                    <div className="col-4 m-auto">
+                    <div className="col-md-4 col-5 m-auto">
                       <label>Password : </label>
                     </div>
 
-                    <div className="col-8">
+                    <div className="col-md-8 col-7">
                       <input type="password" placeholder='Enter correct password ' required={true} name='password' value={data.password} onChange={(e) => ChangeData(e)} className='form-control' />
                     </div>
 
@@ -111,11 +111,11 @@ const SignUp = () => {
                 <div className="form-group col-10 m-auto my-3">
                   <div className="row">
 
-                    <div className="col-4 m-auto">
+                    <div className="col-md-4 col-5 m-auto">
                       <label>Appointment : </label>
                     </div>
 
-                    <div className="col-8">
+                    <div className="col-md-8 col-7">
                       <input type="text" placeholder='Enter Appointed Name ' required={true} name='BName' value={data.BName} onChange={(e) => ChangeData(e)} className='form-control' />
                     </div>
 
@@ -125,11 +125,11 @@ const SignUp = () => {
                 <div className="form-group col-10 m-auto my-3">
                   <div className="row">
 
-                    <div className="col-4 m-auto">
+                    <div className="col-md-4 col-5 m-auto">
                       <label>Appointer Name : </label>
                     </div>
 
-                    <div className="col-8">
+                    <div className="col-md-8 col-7">
                       <input type="text" placeholder='Enter Appointer Name ' required={true} name='leader' value={data.leader} onChange={(e) => ChangeData(e)} className='form-control' />
                     </div>
 

@@ -60,7 +60,7 @@ const AdminEdit = () => {
             <div className="container-fluid LoginPageContainer">
                 <div className="row">
 
-                    <div className="col-4 py-4 bg-info m-auto formContainer">
+                    <div className="col-md-4 col-10 py-4 bg-info m-auto formContainer">
 
                         <h3 className='text-center'>Edit Member Data</h3>
 
@@ -73,7 +73,7 @@ const AdminEdit = () => {
                                 <div className="form-group col-10 m-auto my-3">
                                     <div className="row">
 
-                                        <div className="col-4 m-auto">
+                                        <div className="col-md-4 col-5 m-auto">
                                             <label>User Name : </label>
                                         </div>
 
@@ -81,7 +81,8 @@ const AdminEdit = () => {
                                             <input type="text" placeholder='Enter name ' required={true} name="name" value={data.name} className='form-control' onChange={(e) => ChangeData(e)} />
                                         </div>
 
-                                        <div className="col-1">
+                                        <div className="col-1" style={{height: "15px"
+                                        }}>
                                             
                                         </div>
 
@@ -91,7 +92,7 @@ const AdminEdit = () => {
                                 <div className="form-group col-10 m-auto my-3">
                                     <div className="row">
 
-                                        <div className="col-4 m-auto">
+                                        <div className="col-md-4 col-5 m-auto">
                                             <label>User Code : </label>
                                         </div>
 
@@ -114,7 +115,7 @@ const AdminEdit = () => {
                                 <div className="form-group col-10 m-auto my-3">
                                     <div className="row">
 
-                                        <div className="col-4 m-auto">
+                                        <div className="col-md-4 col-5 m-auto">
                                             <label>Password : </label>
                                         </div>
 

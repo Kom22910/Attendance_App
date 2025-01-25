@@ -63,10 +63,10 @@ const EditPage = () => {
   return (
     <StrictMode>
 
-      <div className="container-fluid LoginPageContainer">
+      <div className="col-12 LoginPageContainer">
         <div className="row">
 
-          <div className="col-4 py-4 bg-info m-auto formContainer">
+          <div className="col-md-4 py-4 m-auto formContainer">
 
             <h3 className='text-center'>Edit Member</h3>
 
@@ -79,11 +79,11 @@ const EditPage = () => {
                 <div className="form-group col-10 m-auto my-3">
                   <div className="row">
 
-                    <div className="col-4 m-auto">
+                    <div className="col-md-4 col-6 m-auto">
                       <label>User Name : </label>
                     </div>
 
-                    <div className="col-8">
+                    <div className="col-md-8 col-7">
                       <input type="text" placeholder='Enter name ' required={true} name="name" value={data.name} className='form-control' onChange={(e) => ChangeData(e)} />
                     </div>
 

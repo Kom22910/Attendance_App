@@ -194,8 +194,7 @@
         overflow: hidden;
 
         .formContainer {
-            margin-top: 20% !important;
-
+            margin-top: 10% !important;
             border-radius: 15px;
             box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.205);
 
@@ -432,7 +431,7 @@
         overflow: hidden;
 
         .formContainer {
-            margin-top: 20% !important;
+            margin-top: 15% !important;
             border-radius: 15px;
             box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.205);
 
@@ -674,7 +673,7 @@
 
         .formContainer {
             width: 75%;
-            margin-top: 20% !important;
+            margin-top: 15% !important;
             border-radius: 15px;
             box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.205);
 
