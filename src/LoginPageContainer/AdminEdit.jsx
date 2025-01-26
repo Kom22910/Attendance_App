@@ -9,7 +9,7 @@ const AdminEdit = () => {
 
     const nav = useNavigate();
 
-    const[hide , setshow] = useState(true)
+    const [hide, setshow] = useState(true)
 
 
     const [data, setData] = useState({
@@ -25,23 +25,36 @@ const AdminEdit = () => {
         setData({ ...data, [name]: value });
     }
 
+    const [isLoading, setIsLoading] = useState(false);
 
     const PostData = (e) => {
         e.preventDefault();
-        axios.put(`${Base_url}/admin/getadmin/${data._id}` , data)
-        .then((res)=>{
-            alert('Succesfully editted');
-            nav('/admin/AXRYVSCDFV');
-        })
-        .catch((err)=>{
-            alert('Editting failed');
-        })
+
+        setIsLoading(true);
+        axios.put(`${Base_url}/admin/getadmin/${data._id}`, data)
+            .then((res) => {
+                setIsLoading(false);
+                alert('Succesfully editted');
+                nav('/admin/AXRYVSCDFV');
+            })
+            .catch((err) => {
+                alert('Editting failed');
+            })
     }
 
 
     const FetchData = async () => {
-        let res = await axios.get(`${Base_url}/admin/getadmin`)
-        setData(res.data.data[0])
+        try {
+            setIsLoading(true);
+            let res = await axios.get(`${Base_url}/admin/getadmin`)
+            setData(res.data.data[0])
+        }
+        catch (err) {
+            console.error("Error while fetching data", err);
+        }
+        finally{
+            setIsLoading(false);
+        }
     }
 
 
@@ -55,6 +68,17 @@ const AdminEdit = () => {
 
     return (
         <StrictMode>
+
+            {
+                isLoading &&
+                <div className="col-12 loader_container">
+                    <div className="spinner-border text-danger loader" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+            }
+
 
 
             <div className="container-fluid LoginPageContainer">
@@ -81,9 +105,10 @@ const AdminEdit = () => {
                                             <input type="text" placeholder='Enter name ' required={true} name="name" value={data.name} className='form-control' onChange={(e) => ChangeData(e)} />
                                         </div>
 
-                                        <div className="col-1" style={{height: "15px"
+                                        <div className="col-1" style={{
+                                            height: "15px"
                                         }}>
-                                            
+
                                         </div>
 
                                     </div>
@@ -104,7 +129,7 @@ const AdminEdit = () => {
                                             <div className={
                                                 hide === true ? "col-3 btn btn-info py-2 px-2 rounded-pill" : "col-3 btn btn-danger py-2 px-2 rounded-pill"
                                             }
-                                            onClick={()=>setshow(!hide)} 
+                                                onClick={() => setshow(!hide)}
                                             >
                                             </div>
                                         </div>
@@ -120,7 +145,7 @@ const AdminEdit = () => {
                                         </div>
 
                                         <div className="col-7">
-                                            <input type={hide===true ? "password" : "text"} placeholder='Enter correct password ' required={true} name='password' value={data.password} onChange={(e) => ChangeData(e)} className='form-control' />
+                                            <input type={hide === true ? "password" : "text"} placeholder='Enter correct password ' required={true} name='password' value={data.password} onChange={(e) => ChangeData(e)} className='form-control' />
                                         </div>
 
 
@@ -128,7 +153,7 @@ const AdminEdit = () => {
                                             <div className={
                                                 hide === true ? "col-3 btn btn-info py-2 px-2 rounded-pill" : "col-3 btn btn-danger py-2 px-2 rounded-pill"
                                             }
-                                            onClick={()=>setshow(!hide)} 
+                                                onClick={() => setshow(!hide)}
                                             >
                                             </div>
                                         </div>

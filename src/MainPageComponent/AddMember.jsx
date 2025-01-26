@@ -7,12 +7,10 @@ import React, { StrictMode, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 const Base_url = import.meta.env.VITE_BASE_URL;
 
-const AddMember = ({ title }) => {
+const AddMember = ({ title  , loading }) => {
     const nav = useNavigate();
 
     const [totalData, setTotalData] = useState([]);
-
-
 
 
     const ChangeEdit = (keyId) => {
@@ -23,14 +21,15 @@ const AddMember = ({ title }) => {
     const deleteIt = (keyId) => {
         if (confirm('Are you Sure ? ')) {
             axios.delete(`${Base_url}/user/api/${keyId}`)
-                .then((res) => {
+            .then((res) => {
                     alert(res.data.message);
                     console.log(res.data.message);
                 })
                 .catch((err) => {
                     alert('Error while deleting ' + err);
                 })
-            setVisibleContent(visibleContent !== 4 ? 4 : 1)
+
+                setVisibleContent(visibleContent !== 4 ? 4 : 1)
         }
     };
 
@@ -47,7 +46,7 @@ const AddMember = ({ title }) => {
 
     useEffect(() => {
         FetchData();
-    }, []);
+    }, [totalData]);
 
     return (
         <StrictMode>

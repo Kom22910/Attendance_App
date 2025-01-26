@@ -15,16 +15,28 @@ const UserLayout = () => {
 
 
   const [user, setUser] = useState({});
-  const {LogoutUser} = useAuth();
+  const { LogoutUser } = useAuth();
 
+
+  const [isLoading, setIsLoading] = useState(false);
   // console.log(user);
 
   const FetchId = async () => {
-    let res = await axios.get(`${Base_url}/user/api/${ID.id}`);
-    setUser(res.data.data);
+    try{
+      setIsLoading(true);
+      let res = await axios.get(`${Base_url}/user/api/${ID.id}`);
+      setUser(res.data.data);
+    }
+    catch(err){
+      console.error("Error while Fetching data" , err);
+    }
+    finally{
+      setIsLoading(false);
+    }
   }
 
   const DeleteFile = async () => {
+    setIsLoading(true);
     if (confirm('Are you sure ?')) {
       let time = new Date().toLocaleTimeString();
 
@@ -34,6 +46,7 @@ const UserLayout = () => {
       })
         .then(() => {
           alert("Successfully Logout");
+          setIsLoading(false);
           LogoutUser()
           nav('/');
         })
@@ -51,6 +64,18 @@ const UserLayout = () => {
 
   return (
     <StrictMode>
+
+
+
+      {
+        isLoading &&
+        <div className="col-12 loader_container">
+          <div className="spinner-border text-danger loader" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
+      }
 
       <div className="container-fluid UserContainer">
         <div className="row">

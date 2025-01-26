@@ -13,12 +13,16 @@ const SignUp = () => {
     name: "",
     code: "",
     password: "",
-    login:"--:--:--",
-    logout:"--:--:--",
-    status:"----",
-    BName:"",
-    leader:""
+    login: "--:--:--",
+    logout: "--:--:--",
+    status: "----",
+    BName: "",
+    leader: ""
   })
+
+
+
+  const [isLoading, setIsLoading] = useState(false);
 
 
   const ChangeData = (e) => {
@@ -29,19 +33,23 @@ const SignUp = () => {
   const PostData = (e) => {
     e.preventDefault();
 
-    const Submitting=async()=>{
-      try{
-        await axios.post(`${Base_url}/user/api/signup` , data)
-        .then((res)=>{
-          alert(res.data.message);
-          nav(`/admin/AXRYVSCDFV/`);
-        })
-        .catch((err)=>{
-          alert(err.response.data.Error);
-        })
+    const Submitting = async () => {
+      setIsLoading(true);
+      try {
+        await axios.post(`${Base_url}/user/api/signup`, data)
+          .then((res) => {
+            alert(res.data.message);
+            nav(`/admin/AXRYVSCDFV/`);
+          })
+          .catch((err) => {
+            alert(err.response.data.Error);
+          })
       }
-      catch(err){
+      catch (err) {
         console.log(err);
+      }
+      finally{
+        setIsLoading(false);
       }
     }
 
@@ -52,6 +60,18 @@ const SignUp = () => {
 
   return (
     <StrictMode>
+
+
+
+      {
+        isLoading &&
+        <div className="col-12 loader_container">
+          <div className="spinner-border text-danger loader" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
+      }
 
       <div className="container-fluid LoginPageContainer">
         <div className="row">

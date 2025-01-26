@@ -42,11 +42,13 @@ const LoginPage = () => {
     const [clickButton, setClickButton] = useState(null);
 
 
+    const [isLoading, setIsLoading] = useState(false);
+
+
     const Submitting = (e) => {
         e.preventDefault();
 
-
-
+        setIsLoading(true);
         const LoginOperation = async () => {
             try {
                 let currentTime = new Date().toLocaleTimeString();
@@ -58,6 +60,7 @@ const LoginPage = () => {
                             logout: "--:--:--",
                             status: "Active"
                         })
+                        setIsLoading(false);
                         alert("Login Successfully !!!!!");
                         storeTokenLs(res.data.token);
                         nav(`/user/${res.data.id}`);
@@ -75,8 +78,9 @@ const LoginPage = () => {
 
 
     const Verification = () => {
-        axios.get(`${Base_url}/user/api/token` , config)
+        axios.get(`${Base_url}/user/api/token`, config)
             .then((res) => {
+                setIsLoading(false);
                 alert("You have already Login !!!!!");
                 const res_id = res.data.id;
                 if (res_id !== null) {
@@ -85,9 +89,16 @@ const LoginPage = () => {
             })
     }
 
+
+
+
     useEffect(() => {
-        if(storetoken !== null){
+        setIsLoading(true);
+        if (storetoken !== null) {
             Verification();
+        }
+        else{
+            setIsLoading(false);
         }
     }, [])
 
@@ -95,10 +106,20 @@ const LoginPage = () => {
     return (
         <StrictMode>
 
+            {
+                isLoading &&
+                <div className="col-12 loader_container">
+                    <div className="spinner-border text-danger loader" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+
+            }
+
             <div className="container-fluid LoginPageContainer">
                 <div className="row">
 
-                    <div className="col-md-4 col-sm-8 col-10 py-4 m-auto bg-info formContainer">
+                    <div className="col-md-4 col-sm-8 col-10 py-4 m-auto formContainer">
 
                         <h3 className='text-center'>Login Page</h3>
 

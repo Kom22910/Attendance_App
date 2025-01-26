@@ -16,8 +16,8 @@ const EditPage = () => {
     name: "",
     code: "",
     password: "",
-    BName : "",
-    leader : ""
+    BName: "",
+    leader: ""
   })
 
 
@@ -29,9 +29,11 @@ const EditPage = () => {
   const PostData = (e) => {
     e.preventDefault();
 
+    setIsLoading(true);
     axios.put(`${Base_url}/user/api/${ID.id}`, data)
       .then(() => {
         alert("Succesfully Editted Member Data !!!! ");
+        setIsLoading(false);
         nav('/admin/AXRYVSCDFV')
       })
       .catch((err) => {
@@ -42,26 +44,47 @@ const EditPage = () => {
       name: "",
       code: "",
       password: "",
-      BName : "",
-      leader : ""
+      BName: "",
+      leader: ""
     })
   }
 
+  const [isLoading, setIsLoading] = useState(false);
 
-  const FetchData = async()=>{
-    let res = await axios.get(`${Base_url}/user/api/${ID.id}`) ;
-    setData(res.data.data);
+  const FetchData = async () => {
+    try {
+      setIsLoading(true);
+      let res = await axios.get(`${Base_url}/user/api/${ID.id}`);
+      setData(res.data.data);
+    }
+    catch (err) {
+      console.error("Error while fetching data ", err);
+    }
+    finally {
+      setIsLoading(false);
+    }
   }
 
 
 
-  useEffect(()=>{
+  useEffect(() => {
     FetchData();
-  } , []);
+  }, []);
 
 
   return (
     <StrictMode>
+
+
+      {
+        isLoading &&
+        <div className="col-12 loader_container">
+          <div className="spinner-border text-danger loader" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
+      }
 
       <div className="col-12 LoginPageContainer">
         <div className="row">
@@ -151,7 +174,7 @@ const EditPage = () => {
 
                 <div className="col-12 text-center mt-4">
                   <button className='btn btn-success px-4 mx-3 w-25 fw-bold'>
-                    Edit 
+                    Edit
                   </button>
                 </div>
 
