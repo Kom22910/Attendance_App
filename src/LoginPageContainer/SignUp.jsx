@@ -146,7 +146,7 @@ const SignUp = () => {
                   <div className="row">
 
                     <div className="col-md-4 col-5 m-auto">
-                      <label>Appointer Name : </label>
+                      <label>Appt Name : </label>
                     </div>
 
                     <div className="col-md-8 col-7">

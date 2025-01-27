@@ -22,15 +22,15 @@ const UserLayout = () => {
   // console.log(user);
 
   const FetchId = async () => {
-    try{
+    try {
       setIsLoading(true);
       let res = await axios.get(`${Base_url}/user/api/${ID.id}`);
       setUser(res.data.data);
     }
-    catch(err){
-      console.error("Error while Fetching data" , err);
+    catch (err) {
+      console.error("Error while Fetching data", err);
     }
-    finally{
+    finally {
       setIsLoading(false);
     }
   }
@@ -74,8 +74,9 @@ const UserLayout = () => {
             <span className="visually-hidden">Loading...</span>
           </div>
         </div>
-
       }
+
+      
 
       <div className="container-fluid UserContainer">
         <div className="row">
@@ -104,7 +105,7 @@ const UserLayout = () => {
                         <div className="row">
 
                           <div className="col-md-4 col-6 start">
-                            <p>Appointed : </p>
+                            <p>Appointment : </p>
                           </div>
 
                           <div className="col-md-4 col-6">
@@ -143,7 +144,7 @@ const UserLayout = () => {
                         <div className="row">
 
                           <div className="col-md-4 col-6 start">
-                            <p>Appointer : </p>
+                            <p>Appt Name : </p>
                           </div>
 
                           <div className="col-md-4 col-6">

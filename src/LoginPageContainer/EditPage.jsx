@@ -117,7 +117,7 @@ const EditPage = () => {
                   <div className="row">
 
                     <div className="col-4 m-auto">
-                      <label>User Email : </label>
+                      <label>User Code : </label>
                     </div>
 
                     <div className="col-8">
@@ -145,7 +145,7 @@ const EditPage = () => {
                   <div className="row">
 
                     <div className="col-4 m-auto">
-                      <label>Batch Name : </label>
+                      <label>Appointment : </label>
                     </div>
 
                     <div className="col-8">
@@ -159,7 +159,7 @@ const EditPage = () => {
                   <div className="row">
 
                     <div className="col-4 m-auto">
-                      <label>Leader Name : </label>
+                      <label>Appt Name : </label>
                     </div>
 
                     <div className="col-8">

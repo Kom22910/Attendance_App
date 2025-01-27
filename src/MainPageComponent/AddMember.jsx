@@ -76,7 +76,7 @@ const AddMember = ({ title  , loading }) => {
                                     <th>Code</th>
                                     <th className='vis vis1'>Member password</th>
                                     <th>Appointment</th>
-                                    <th className='vis'>Appointer Name</th>
+                                    <th className='vis'>Appt Name</th>
                                 </tr>
                             </thead>
                             <tbody>

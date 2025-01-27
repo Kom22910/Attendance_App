@@ -66,7 +66,9 @@ const LoginPage = () => {
                         nav(`/user/${res.data.id}`);
 
                     })
-                    .catch(err => alert("Username or password is wrong , Login Failed !!!!"));
+                    .catch(err => {
+                        alert("Username or password is wrong , Login Failed !!!!")
+                    });
             }
             catch (err) {
                 alert(err.response.data.Error);
@@ -115,7 +117,7 @@ const LoginPage = () => {
                 </div>
 
             }
-
+            
             <div className="container-fluid LoginPageContainer">
                 <div className="row">
 
